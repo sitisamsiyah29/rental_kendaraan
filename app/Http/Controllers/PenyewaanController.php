@@ -18,8 +18,7 @@ class PenyewaanController extends Controller
         $kendaraan = DB::table('kendaraan')->where('id', $id)->get()->first();
         $penyewaan = Penyewaan::create([
             'pengguna_id' => auth()->id(),
-            'kendaraan_id' => $id,
-            'status' => 0
+            'kendaraan_id' => $id
         ]);
 
         if ($penyewaan) {

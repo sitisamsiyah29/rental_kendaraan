@@ -15,10 +15,7 @@ class AdminKendaraanController extends Controller
     public function index()
     {
         $data['header_title'] = 'Kendaraan';
-        $data['kendaraan'] = AdminKendaraan::join('cabang', 'cabang.id', '=', 'kendaraan.cabang_id')->select(
-            'kendaraan.*',
-            'cabang.nama_cabang'
-        )->get();
+        $data['kendaraan'] = AdminKendaraan::join('cabang', 'cabang.id', '=', 'kendaraan.cabang_id')->get();
         return view('admin.kendaraan.index', $data);
     }
 
